@@ -1,9 +1,10 @@
 const { fetchBreedDescription } = require('./breedFetcher');
 const arg = process.argv.splice(2);
-const breedNameUrl = `https://api.thecatapi.com/v1/breeds/search?q=${arg[0]}`;
+const breedNmae = 'siberian';
+//const breedNameUrl = `https://api.thecatapi.com/v1/breeds/search?q=${arg[0]}`;
 
 
-fetchBreedDescription(breedNameUrl, (error,response, desc) => {
+fetchBreedDescription(breedNmae, (error,response, desc) => {
   if (error) {
     return null;
   } else {
@@ -13,7 +14,7 @@ fetchBreedDescription(breedNameUrl, (error,response, desc) => {
     return ((data[0]["description"]).trim());
   }
 });
-module.exports = { breedNameUrl };
+//module.exports = { breedNameUrl };
 /*fetchBreedDescription(breedNameUrl,() => {
   console.log('test');
 });*/
